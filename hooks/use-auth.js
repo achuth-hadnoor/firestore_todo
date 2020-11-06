@@ -3,7 +3,7 @@ import Router from 'next/router';
 import cookie from 'js-cookie'; 
 import firebase, { getUser } from '../utils/firebase'
 import Theme from '../utils/theme'
-import Loading from '../components/Loading';
+import Loading from '../components/Loading'; 
 
 const authContext = createContext();
 
@@ -25,7 +25,6 @@ export const useAuth = () => {
 function useProvideAuth() {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
     const handleUser = async (rawUser) => {
         if (rawUser) { 
             let {uid,...userWithoutToken} = rawUser;            

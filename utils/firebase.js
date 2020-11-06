@@ -39,8 +39,7 @@ const formatUser = async (user) => {
     };
 };
 
-export const getUser = async (uid, data) => {
-
+export const getUser = async (uid, data) => { 
     let userExists = localStorage.getItem('userId');
     if (userExists) {
         let userInfo = localStorage.getItem('userInfo');
