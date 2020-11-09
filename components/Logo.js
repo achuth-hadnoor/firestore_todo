@@ -11,20 +11,20 @@ export default function Logo({ ontitle, ...props }) {
                 <rect x="124" y="436" width="64" height="383.999" rx="32" transform="rotate(180 124 436)" fill="url(#paint3_linear)" />
                 <defs>
                     <linearGradient id="paint0_linear" x1="67.7005" y1="137.22" x2="187.006" y2="160.613" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#ACE38A" />
-                        <stop offset="1" stop-color="#4ADEFF" stop-opacity="0.63" />
+                        <stop stopColor="#ACE38A" />
+                        <stop offset="1" stopColor="#4ADEFF" stopOpacity="0.63" />
                     </linearGradient>
                     <linearGradient id="paint1_linear" x1="67.7005" y1="453.454" x2="187.007" y2="476.848" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#ACE38A" />
-                        <stop offset="1" stop-color="#4ADEFF" stop-opacity="0.63" />
+                        <stop stopColor="#ACE38A" />
+                        <stop offset="1" stopColor="#4ADEFF" stopOpacity="0.63" />
                     </linearGradient>
                     <linearGradient id="paint2_linear" x1="451.273" y1="453.454" x2="564.403" y2="474.404" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#ACE38A" />
-                        <stop offset="1" stop-color="#4ADEFF" stop-opacity="0.63" />
+                        <stop stopColor="#ACE38A" />
+                        <stop offset="1" stopColor="#4ADEFF" stopOpacity="0.63" />
                     </linearGradient>
                     <linearGradient id="paint3_linear" x1="131.273" y1="453.454" x2="244.403" y2="474.404" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#ACE38A" />
-                        <stop offset="1" stop-color="#4ADEFF" stop-opacity="0.63" />
+                        <stop stopColor="#ACE38A" />
+                        <stop offset="1" stopColor="#4ADEFF" stopOpacity="0.63" />
                     </linearGradient>
                 </defs>
             </SVG>

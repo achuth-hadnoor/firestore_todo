@@ -24,9 +24,8 @@ export function Navbar() {
 
 const NavbarContainer = styled.nav`
     display:flex;
-    padding:5px 10px;
     align-items:center;
-    margin: 15px 5px;
+    padding: 15px 25px;
     color:#f8f8f8;
 `;
 

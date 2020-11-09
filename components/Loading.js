@@ -12,8 +12,7 @@ export default function Loading() {
 const LoadingWrapper = styled.div`
     position:absolute;
     height:100vh;
-    width:100vw;
-    background:#121212;
+    width:100vw; 
     align-items:center;
     left:0;
     top:0;

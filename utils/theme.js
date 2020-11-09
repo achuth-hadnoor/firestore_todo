@@ -28,7 +28,8 @@ html, body {
 }
 #__next,body{ 
     height: 100%; 
-    background:#1f2320;
+    background:#1d1e20;
+    background:linear-gradient(rgb(48 54 49) 0%,rgb(31 35 31) 50%);
     transition: opacity 250ms ease 0s;
 } 
 @keyframes comin {
@@ -47,6 +48,12 @@ html, body {
 button{
     border:none;
     align-items:center;
+    border-radius:5px;
+    outline:none;
+    cursor:pointer;
+}
+button:hover{
+    opacity:.8
 }
 `
 // background:rgba(0,0,0,.4);

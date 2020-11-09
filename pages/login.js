@@ -13,9 +13,13 @@ export default function login() {
                 <Logo style={{marginBottom:'30px'}} />
                 <LoginOptions>
                     <span className="title"  style={{marginBottom:'30px'}} >Login to Snippy</span>
-                    <Button icon={google} text="continue with google" primary onClick={() => {
+                    <Button
+                         icon={google} text="continue with google"
+                         primary 
+                         onClick={() => {
                                 console.log(auth.signinWithGoogle());
-                            }}/>
+                            }}
+                    />
                 </LoginOptions> 
             </LoginCard>
 
@@ -28,7 +32,6 @@ const LoginWrapper = styled.div`
     flex: 1 0 auto;
     flex-direction: column;
     height: 100%;
-    background:linear-gradient(rgb(48 54 49) 0%,rgb(31 35 31) 50%);
 }
 `;
 
