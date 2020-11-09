@@ -1,30 +1,53 @@
 import React, { useState } from 'react'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import  { createGlobalStyle, ThemeProvider } from 'styled-components'
+import reset from 'styled-reset'
 const GlobalStyle = createGlobalStyle`
-  body{
-    margin: 0;
-    padding: 0;
+    ${reset}
+* {
     box-sizing: border-box;
-    font-family: sans-serif;  
-    -webkit-touch-callout: none !important;
-    font-weight: 500;
-    height: 100%;
-    overflow: hidden !important;
+    touch-action: pan-x pan-y;
 }
-#__next{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin:auto;
-}
-@media (min-width: 1450px){
-    #__next {
-        max-width: 1450px;
-        padding: 20px;
-    }
+html, body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    font-family:sans-serif;
 }
 
+  body{
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    user-select: none;
+    text-size-adjust: none;
+    cursor: default;
+}
+#__next,body{ 
+    height: 100%; 
+    background:#1f2320;
+    transition: opacity 250ms ease 0s;
+} 
+@keyframes comin {
+    
+0% {
+    opacity: 0;
+    transform: translate(0px, -10px);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+} 
+100% {
+    opacity: 1;
+    transform: none;
+}
+}
+
+button{
+    border:none;
+    align-items:center;
+}
 `
 // background:rgba(0,0,0,.4);
 // background-image: url("https://images.unsplash.com/photo-1547185942-2b5661136b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80");

@@ -12,7 +12,7 @@ export function Navbar() {
     const { user, signout } = useAuth();
     return (
         <NavbarContainer>
-            <Logo />
+            <Logo ontitle/>
             <span style={{ flex: 1 }} />
             <IconTooltip icon={power} onClick={() => { signout() }} />
             <IconTooltip icon={cloud} />
@@ -27,6 +27,7 @@ const NavbarContainer = styled.nav`
     padding:5px 10px;
     align-items:center;
     margin: 15px 5px;
+    color:#f8f8f8;
 `;
 
 const ProfileImg = styled.img`
