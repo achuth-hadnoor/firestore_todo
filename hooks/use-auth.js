@@ -9,10 +9,8 @@ const authContext = createContext();
 
 export function AuthProvider({ children }) {
     const auth = useProvideAuth();
-    return <authContext.Provider value={auth}>{
-        auth.loading ?
-            <Loading/>:
-            <Theme darkmode={auth.user.darkmode}>     
+    return <authContext.Provider value={auth}>{ 
+            <Theme darkmode={auth.user?.darkmode}>     
                 {children}
             </Theme>
     }</authContext.Provider>;

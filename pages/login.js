@@ -4,25 +4,27 @@ import Loading from '../components/Loading';
 import styled from 'styled-components';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
-import {google} from 'react-icons-kit/fa'
+import { google } from 'react-icons-kit/fa'
 export default function login() {
-    const auth = useAuth();
+    const { signinWithGoogle, loading } = useAuth();
     return (
         <LoginWrapper>
-            <LoginCard>
-                <Logo style={{marginBottom:'30px'}} />
-                <LoginOptions>
-                    <span className="title"  style={{marginBottom:'30px'}} >Login to Snippy</span>
-                    <Button
-                         icon={google} text="continue with google"
-                         primary 
-                         onClick={() => {
-                                console.log(auth.signinWithGoogle());
-                            }}
-                    />
-                </LoginOptions> 
-            </LoginCard>
-
+            {
+                loading ? <Loading /> :
+                    <LoginCard>
+                        <Logo style={{ marginBottom: '30px' }} />
+                        <LoginOptions>
+                            <span className="title" style={{ marginBottom: '30px' }} >Login to Snippy</span>
+                            <Button
+                                icon={google} text="continue with google"
+                                primary
+                                onClick={() => {
+                                    console.log(signinWithGoogle());
+                                }}
+                            />
+                        </LoginOptions>
+                    </LoginCard>
+            }
         </LoginWrapper>
     )
 }
