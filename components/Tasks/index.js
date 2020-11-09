@@ -7,35 +7,28 @@ import { TODAY } from '../../utils/constants';
 import styled from 'styled-components';
 import TasksView from './TasksView';
 import TaskSidebar from './TasksSidebar';
-import {tasks} from '../../data'
-export default function Tasks() {
-    const auth = useAuth();
-    const [active, setActive] = useState(TODAY);
-    // const {data,status,error} = useFirestoreQuery(
-    //     firebase.firestore().collection('tasks').where('uid', "==", auth.user.uid).limit(10)
-    // ) 
-    const [data, setData] = useState(tasks);
-    let error;
-    let status;
-    if(error){
-     return <div>{error}</div>
-    }
-    
-    if(status === 'loading'){
-        return <Loading/>
-    }
+import { tasks } from '../../data'
 
+class Tasks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasks: tasks,
+            active: TODAY
+        }
+    }
+    render() {
+        let { active,tasks } = this.state;
         return (
             <TasksWrapper>
-                <TaskSidebar active={active} setActive={setActive} tasks={data}/>
-                <TasksView active={active} tasks={data}/> 
+                <TaskSidebar active={active} setActive={(view) => { this.setState(view) }} tasks={tasks} />
+                <TasksView active={active} tasks={tasks} />
             </TasksWrapper>
-            ) 
-
-} 
-
-
+        )
+    }
+}
 const TasksWrapper = styled.div`
-    display:flex; 
+display:flex; 
 `;
- 
+
+export default Tasks;

@@ -2,17 +2,14 @@
 import React from "react";
 import styled from "styled-components";
 import { useAuth } from "../hooks/use-auth";
-import Logo from './Logo'
-import Loading from "./Loading";
-import { cloud, search,power, command} from 'react-icons-kit/feather'
+import { cloud,power, command} from 'react-icons-kit/feather'
 import IconTooltip from "./Icon"; 
 
 export function Navbar() {
     // Get auth state and re-render anytime it changes
     const { user, signout } = useAuth();
     return (
-        <NavbarContainer>
-            <Logo ontitle/>
+        <NavbarContainer> 
             <span style={{ flex: 1 }} />
             <IconTooltip icon={power} onClick={() => { signout() }} />
             <IconTooltip icon={cloud} />

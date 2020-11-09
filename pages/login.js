@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
 import { google } from 'react-icons-kit/fa'
+import { Navbar } from "../components/Nav";
+
 export default function login() {
     const { signinWithGoogle, loading } = useAuth();
     return (
@@ -16,10 +18,10 @@ export default function login() {
                         <LoginOptions>
                             <span className="title" style={{ marginBottom: '30px' }} >Login to Snippy</span>
                             <Button
-                                icon={google} text="continue with google"
+                                icon={google} text="Continue with Google"
                                 primary
                                 onClick={() => {
-                                    console.log(signinWithGoogle());
+                                    signinWithGoogle('/')
                                 }}
                             />
                         </LoginOptions>

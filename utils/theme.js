@@ -30,6 +30,7 @@ html, body {
     height: 100%; 
     background:#1d1e20;
     background:linear-gradient(rgb(48 54 49) 0%,rgb(31 35 31) 50%);
+    background:#1A1B1A;
     transition: opacity 250ms ease 0s;
 } 
 @keyframes comin {
@@ -51,10 +52,15 @@ button{
     border-radius:5px;
     outline:none;
     cursor:pointer;
+    transition:box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
 }
 button:hover{
-    opacity:.8
+    opacity:.8;
 }
+button:active{
+    transform: scale(0.96) !important;
+}
+
 `
 // background:rgba(0,0,0,.4);
 // background-image: url("https://images.unsplash.com/photo-1547185942-2b5661136b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80");

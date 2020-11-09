@@ -38,8 +38,9 @@ function useProvideAuth() {
         } else {
             setUser(false);
             cookie.remove('slate-auth');
-
+            localStorage.clear();
             setLoading(false);
+            Router.push('/login');
             return false;
         }
     };
@@ -90,26 +91,17 @@ function useProvideAuth() {
         await firebase.db.doc(`users/${user.uid}`).update(_user);
         Router.replace(`/slate/${user.slate}`)
     }
-
-    useEffect(() => {
-        const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
-        return () => unsubscribe();
-    }, []);
-
     const signout = () => {
-        Router.push('/login');
-       return firebase
-            .auth()
-            .signOut()
-            .then(() => {
-                handleUser(false);
-                localStorage.clear();
+        return firebase
+        .auth()
+        .signOut()
+        .then(() => {
+            handleUser(false);
             });
     };
 
     useEffect(() => {
         const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
-
         return () => unsubscribe();
     }, []);
 
