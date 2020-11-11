@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Icon from 'react-icons-kit'
 import { sun, star, calendar, edit3, atSign, x } from 'react-icons-kit/feather'
 import { TODAY, TASKS, ASSIGNED, SCHEDULED, STARRED } from '../../utils/constants'
+import { plus } from 'react-icons-kit/feather'
+import { command } from 'react-icons-kit/feather'
 
 export default function TaskSidebar({ active, setActive }) {
     const [open, setOpen] = React.useState(false);
@@ -48,7 +50,24 @@ export default function TaskSidebar({ active, setActive }) {
                         <span>Tasks</span>
                     </SideBarListItem>
                 </SideBarList>
-            </>
+                    
+                <SidebarTitle>Collections</SidebarTitle>
+
+                 <SideBarList>
+                    <SideBarListItem
+                        active={active === TODAY ? true : false}
+                        onClick={() => { setActive(TODAY); setOpen(!open) }}
+                    >
+                        <IconView icon={sun} style={{ padding: '5px' }} />
+                        <span>Create React </span>
+                    </SideBarListItem> 
+                </SideBarList>
+
+                    <SideBarListItem >
+                        <IconView icon={plus} style={{ padding: '5px' }} />
+                        <span>Create Collection   Alt + <Icon icon={command}/> + T </span>
+                    </SideBarListItem> 
+           </>
     )
     {/* </SidebarWrapper> */}
 }
@@ -60,11 +79,12 @@ const IconView = styled(Icon)`
 
 
 const SidebarTitle = styled.div`
-    font-size: .7em;
+    font-size: .8em;
     font-weight:600;
     color:#808080;
     padding-top:0px;    
-    
+    margin-top: 20px;
+    margin-left: 20px;
     @media only screen and (max-width: 500px) {
     & {
            padding-top:30px;  
@@ -95,7 +115,7 @@ const SideBarListItem = styled.button`
     width:100%;
     border-radius: 5px; 
     align-items:center;
-    margin-bottom:5px;
+    margin-bottom:7px;
     color:#fefefe;
     background:${props => props.active ? '#171717' : 'transparent'};
     &:hover{

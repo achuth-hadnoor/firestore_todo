@@ -3,19 +3,42 @@ import  { createGlobalStyle, ThemeProvider } from 'styled-components'
 import reset from 'styled-reset'
 const GlobalStyle = createGlobalStyle`
     ${reset}
-* {
-    box-sizing: border-box;
-    touch-action: pan-x pan-y;
-}
-html, body {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    position: fixed;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-    font-family:sans-serif;
-}
+        * {
+            box-sizing: border-box;
+            touch-action: pan-x pan-y;
+        }
+        html, body {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            position: fixed;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            font-family:sans-serif;
+        }
+        ::-webkit-scrollbar {
+            width: 14px;
+            height: 14px
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent
+        }
+        ::-webkit-scrollbar-thumb,::-webkit-scrollbar-track {
+            border: 4px solid transparent;
+            background-clip: padding-box;
+            border-radius: 8px
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color:#777;
+        }
+        ::-webkit-scrollbar-button {
+            display: none;
+            width: 0;
+            height: 0
+        }
+        ::-webkit-scrollbar-corner {
+            background-color: transparent
+        }
 
   body{
     font-size: 16px;

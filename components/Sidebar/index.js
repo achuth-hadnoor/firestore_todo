@@ -19,6 +19,7 @@ const SidebarWrapper = styled.div`
     padding:10px;
     display:flex;
     flex-direction:column;
+    overflow:auto;
     @media only screen and (max-width: 500px) {
         &{
             display:none;

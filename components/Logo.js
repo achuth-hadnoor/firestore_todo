@@ -41,7 +41,7 @@ const LogoWrapper = styled.div`
     color:#fff;
     .title{
         padding:0px 10px;
-        font-size:1.5em;
+        font-size:1.2em;
         user-select:none;
     }
 `;
