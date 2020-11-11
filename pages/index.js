@@ -1,14 +1,21 @@
-import { useAuth } from "../hooks/use-auth";
-import Loading from "../components/Loading";
+import styled from "styled-components";
+
 import Tasks from "../components/Tasks";
+import Sidebar from "../components/Sidebar";
 import Page from "../components/Page";
-export default function Home() {
-    const { loading } = useAuth();
-    if (loading){ 
-     return <Loading />};     
+
+export default function Home() {  
     return (
         <Page>
-            <Tasks />
+            <Container>
+                <Sidebar/>
+                <Tasks/>
+            </Container>
         </Page>
     );
 }
+
+const Container = styled.div`
+    display:flex;
+    height:100%; 
+`;

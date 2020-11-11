@@ -5,7 +5,7 @@ import { useAuth } from "../hooks/use-auth";
 import { cloud,power, command} from 'react-icons-kit/feather'
 import IconTooltip from "./Icon"; 
 
-export function Navbar() {
+export default function Navbar() {
     // Get auth state and re-render anytime it changes
     const { user, signout } = useAuth();
     return (
@@ -21,6 +21,7 @@ export function Navbar() {
 
 const NavbarContainer = styled.nav`
     display:flex;
+    flex:1;
     align-items:center;
     padding: 15px 25px;
     color:#f8f8f8;

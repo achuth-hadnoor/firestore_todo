@@ -2,18 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import Icon from 'react-icons-kit'
 import { sun, star, calendar, edit3, atSign, x } from 'react-icons-kit/feather'
-import { TODAY, TASKS, ASSIGNED, SCHEDULED, STARRED } from '../../../utils/constants'
-import { menu } from 'react-icons-kit/feather'
-import Logo from '../../Logo'
+import { TODAY, TASKS, ASSIGNED, SCHEDULED, STARRED } from '../../utils/constants'
 
 export default function TaskSidebar({ active, setActive }) {
     const [open, setOpen] = React.useState(false);
+    {/*<SidebarWrapper>
+    <Logo ontitle/>*/}
     return (
-        <SidebarWrapper>
-            <Logo ontitle/>
-            <SidebarContainer open={open}> 
-            <Icon icon={menu} style={{ padding: '10px' }} onClick={() => { setOpen(!open) }} className="menu" />
-
+            <> 
                 <SidebarTitle>Categories</SidebarTitle>
                 <SideBarList>
                     <SideBarListItem
@@ -52,10 +48,9 @@ export default function TaskSidebar({ active, setActive }) {
                         <span>Tasks</span>
                     </SideBarListItem>
                 </SideBarList>
-            </SidebarContainer>
-
-        </SidebarWrapper>
+            </>
     )
+    {/* </SidebarWrapper> */}
 }
 
 const IconView = styled(Icon)`
@@ -63,38 +58,6 @@ const IconView = styled(Icon)`
 }
 `;
 
-const SidebarWrapper = styled.div`
-display:block;
-.menu{
-    display:block;
-    z-index:9999;
-    @media only screen and (max-width: 500px) {
-        display:none;
-    }
-}
- `;
-
-const SidebarContainer = styled.div`    
-    padding: 10px;
-    border-radius: 10px;
-    width:300px;
-    @media only screen and (max-width: 500px) {
-    & {     
-       display:${({ open }) => open ? 'block' : 'none'};
-       position:absolute;
-       top:0px;
-       left:0px;
-       align-items:center;
-       background: rgba(0, 0, 0, 0.35);
-       backdrop-filter: blur(10px);
-       height:100%;
-       width:100%;   
-       opacity:0;
-        animation: 0.3s ease 0.2s 1 normal both running comin; 
-        }
-    }
-    
-    `;
 
 const SidebarTitle = styled.div`
     font-size: .7em;
